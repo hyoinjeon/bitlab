@@ -26,19 +26,19 @@ public class HomeController {
         return "contact";
     }
 
-    @GetMapping("/solutions/test1")
-    public String solution1() {
+    @GetMapping("/business/solution")
+    public String solution() {
         return "solution";
     }
 
-    @GetMapping("/solutions/test2")
-    public String solution2() {
-        return "solution";
+    @GetMapping("/business/service")
+    public String businessService() {
+        return "business-service";
     }
 
-    @GetMapping("/solutions/test3")
-    public String solution3() {
-        return "solution";
+    @GetMapping("/business/da-dw-si")
+    public String daDwSi() {
+        return "da-dw-si";
     }
 
 }
