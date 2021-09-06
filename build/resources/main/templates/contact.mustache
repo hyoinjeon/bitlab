@@ -5,7 +5,9 @@
             <div class="col-lg-3 col-md-3 col-sm-12 title-area">
                 <div class="site-title" id="title">
                     <a href="/" title="">
-                        <h4>BIT<span>LAB</span></h4>
+                        <h4>
+                            <img src="img/logo_bitlab.png" width="100" height="45" />
+                        </h4>
                     </a>
                 </div>
             </div>
@@ -20,11 +22,11 @@
                             </li>
                             <li><a href="/service">Service</a>
                             </li>
-                            <li><a href="/solutions/test1">Solution</a>
+                            <li><a href="/business/solution">Business</a>
                                 <ul class="dropdown">
-                                    <li><a href="/solutions/test1">SOLUTION 1</a></li>
-                                    <li><a href="/solutions/test2">SOLUTION 2</a></li>
-                                    <li><a href="/solutions/test3">SOLUTION 3</a></li>
+                                    <li><a href="/business/solution">SOLUTION</a></li>
+                                    <li><a href="/business/service">SERVICE</a></li>
+                                    <li><a href="/business/da-dw-si">DA/DW/SI</a></li>
                                 </ul>
                             </li>
                             <li class="active"><a href="/contact">Contact</a>
@@ -70,20 +72,21 @@
 </header>
 <!-- end header -->
 
+
 <section class="section1">
     <div class="container clearfix">
         <div class="content col-lg-12 col-md-12 col-sm-12 clearfix">
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <h4 class="title">Contact Form</h4>
                 <div id="message"></div>
-                <form class="contact-form php-mail-form" role="form" action="contactform/contactform.php" method="POST">
+                <form action="/contact/mail" id="sendForm" method="post">
 
                     <div class="form-group">
-                        <input type="name" name="name" class="form-control" id="contact-name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" >
+                        <input type="name" name="name" class="form-control" id="contact-name" placeholder="Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" >
                         <div class="validate"></div>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" class="form-control" id="contact-email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+                        <input type="email" name="email" class="form-control" id="contact-email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email">
                         <div class="validate"></div>
                     </div>
                     <div class="form-group">
@@ -92,16 +95,15 @@
                     </div>
 
                     <div class="form-group">
-                        <textarea class="form-control" name="message" id="contact-message" placeholder="Your Message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
+                        <textarea class="form-control" name="message" id="contact-message" placeholder="Message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
                         <div class="validate"></div>
                     </div>
 
                     <div class="loading"></div>
                     <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
 
                     <div class="form-send">
-                        <button type="submit" class="btn btn-large btn-primary">Send Message</button>
+                        <button type="button" class="btn btn-large btn-primary" onclick="sendMail()">발송하기</button>
                     </div>
 
                 </form>
@@ -109,11 +111,11 @@
 
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <h4 class="title">Contact Details</h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <p></p>
                 <ul class="contact_details">
-                    <li><i class="fa fa-envelope-o"></i> info@yoursite.com</li>
-                    <li><i class="fa fa-phone-square"></i> +34 5565 6555</li>
-                    <li><i class="fa fa-home"></i> Some Fine Address, 887, Madrid, Spain.</li>
+                    <li><i class="fa fa-envelope-o"></i> bitlab@bitlab.co.kr</li>
+                   <!-- <li><i class="fa fa-phone-square"></i> </li> -->
+                    <li><i class="fa fa-home"></i> 경기도 하남시 미사강변한강로 290-3, 230호(망월동, 미사강변도시 C3)</li>
                 </ul>
                 <!-- contact_details -->
             </div>
@@ -216,5 +218,11 @@
     <!-- end container -->
 </section>
 <!-- end section -->
+<script>
+    function sendMail() {
+        if(confirm("메일 발송하시겠습니까?")) {
+        document.getElementById("sendForm").submit();
+        }
+    }
+</script>
 {{>layout/footer}}
-
